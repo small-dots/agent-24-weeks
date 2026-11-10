@@ -1,0 +1,25 @@
+[project]
+name = "261110"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "「安忠琪」", email = "1695603363@qq.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "httpx>=0.28.1",
+    "load-dotenv>=0.1.0",
+    "python-dotenv>=1.2.4",
+    "tqdm>=4.70.1",
+]
+
+[project.scripts]
+261110 = "_261110:main"
+
+[tool.uv.build-backend]
+module-name = "_261110"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
