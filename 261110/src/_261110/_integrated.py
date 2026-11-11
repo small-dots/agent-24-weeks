@@ -19,13 +19,13 @@ clinet = httpx.AsyncClient(timeout=10.0)
 base_url = os.getenv("API_BASE_URL","")
 
 async def get_user(id:str):
-  res = await clinet.get(base_url ,params={id})
+  res = await clinet.get(base_url+f"/users/{id}")
   return res.json()
 
 
 
 async def main():
-  ress =  asyncio.gather(get_user(1),get_user(2),get_user(3))
+  ress =  await asyncio.gather(get_user(1),get_user(2),get_user(3))
   print(ress)
 
 asyncio.run(main())
